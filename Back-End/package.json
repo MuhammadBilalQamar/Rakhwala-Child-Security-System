@@ -12,6 +12,9 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "express-middleware": "^3.4.2"
+    "express-middleware": "^3.4.2",
+    "multer": "^1.4.2",
+    "mysql": "github:mysqljs/mysql",
+    "nodemon": "^2.0.2"
   }
 }
