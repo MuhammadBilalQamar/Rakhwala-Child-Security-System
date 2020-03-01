@@ -5,7 +5,7 @@ const { jsonParser, urlEncodedParser } = require("./config/bodyParser");
 const { loginApi, registerApi } = require("./models/Auth/auth");
 
 
-//APP USE MODULES
+//APP USE MODULES S
 app.use("/uploads", express.static("uploads"));
 app.use(jsonParser, urlEncodedParser);
 
