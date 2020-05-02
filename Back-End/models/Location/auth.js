@@ -4,7 +4,7 @@ var upload = require("../../config/multer");
 
 
 
-const registerApi = router.post("/parrent-register", upload.single("myImg"), (req, res) => {
+const registerApi = router.post("/user-register", upload.single("myImg"), (req, res) => {
   // console.log(req.files, "MY FILEEEEEEEEEEEEEEEEEEEEEEEEEE");
   // conn.connect((err) => {
   //   if (err) {
