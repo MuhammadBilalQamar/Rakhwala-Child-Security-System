@@ -15,7 +15,7 @@ let sendMail = (recipitant, material) => {
     // secure: true, // use TLS
     auth: {
       user: "bilalqmr41@gmail.com",
-      pass: "BILAL12345"
+      pass: ""
     }
   });
 
