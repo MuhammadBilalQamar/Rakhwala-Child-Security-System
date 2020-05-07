@@ -1,20 +1,19 @@
 {
-  "name": "rakhwala",
+  "name": "rakhwala-backend",
   "version": "1.0.0",
-  "description": "This is rakhwala child security system",
-  "main": "server.js",
+  "description": "a node.js (API) based backend",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Muhammad Bilal Qamar",
+  "author": "Muhammad Umar && Muhammad Bilal",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "express-middleware": "^3.4.2",
     "multer": "^1.4.2",
-    "mysql": "github:mysqljs/mysql",
-    "nodemon": "^2.0.2"
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.4.6",
+    "randomstring": "^1.1.5"
   }
 }

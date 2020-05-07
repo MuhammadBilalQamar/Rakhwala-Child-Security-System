@@ -1,0 +1,42 @@
+Auth:(get api) 
+Folder(Models/auth/login)
+
+http://localhost:4000/login-user/:email/:password
+
+-----------------------------------------------------------
+
+Register:(both are post apis---send data in body)
+Folder(Models/auth/registration)
+
+http://localhost:4000/register/user
+http://localhost:4000/register/child
+
+USER BODY=>===========
+{       "name":"bilal",
+        "email":"bilalqmr1@gmail.com",
+        "phone":"031231232",
+        "password":"12334323",
+        "latitude":"33443.234234",
+        "longitude":"234234.123123",
+        "place":"Karachi, Pakistan",
+        "gender":"MALE"
+}
+
+CHILD BODY=>============
+{       "name":"umar",
+        "nickName":"champoo",
+        "watchKey":"rakhwala-team-01",
+        "latitude":"33443.234234",
+        "longitude":"234234.123123",
+        "temperature":"Karachi, Pakistan",
+        "pulse":"72",
+        "gender":"MALE",
+        "parrentId":29
+}
+
+
+--------------------------------------------------------------
+
+
+
+

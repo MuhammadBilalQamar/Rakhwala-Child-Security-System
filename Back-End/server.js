@@ -1,23 +1,20 @@
-const express = require('express')
-const app = express()
-var port = process.env.port || 3000;
-const { jsonParser, urlEncodedParser } = require("./config/bodyParser");
-const { loginApi, registerApi } = require("./models/Auth/auth");
+let { app } = require("./config/expressconfig");
+let main = app();
+
+//------------ AUTHENTICATION--------------
+let { userLoginApi } = require("./models/auth/login");
+
+main.use("/", userLoginApi);
 
 
-//APP USE MODULES S
-app.use("/uploads", express.static("uploads"));
-app.use(jsonParser, urlEncodedParser);
+//------------- REGISTRATION--------------------
+let { userRegistration, childRegistration, emailVerificationApi } = require("./models/auth/registeration");
 
+main.use("/", userRegistration);
+main.use("/", childRegistration);
+main.use("/", emailVerificationApi);
 
-//API REQUEST/RESPONSE RELATED WORK
-app.get('/', (req, res) => res.send('Bismillah Hirrahmanirrahim. This  is root route !'))
-app.use("/auth/login", loginApi);
-app.use("/auth/register", registerApi);
-
-
-
-//APP LISTNING (ABOUT PORT DESCRIPTION)
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
-
+//------------ ROOT REQUEST-------------------
+main.get("/", (req, res) => {
+    return res.json({ message: "BISMILAH-HIR-RAHMAN-IR-RAHIM \n  ALLAH HU AKBAR" })
+})
