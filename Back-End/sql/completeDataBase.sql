@@ -34,11 +34,11 @@ CREATE TABLE `child` (
   `parrentId` int(255) DEFAULT NULL,
   `gender` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `child` */
 
-insert  into `child`(`id`,`name`,`image`,`latitude`,`longitude`,`temperature`,`pulse`,`nickName`,`watchKey`,`registrationDate`,`parrentId`,`gender`) values (8,'umar',NULL,'33443.234234','234234.123123','Karachi, Pakistan','72','champoo','rakhwala-team-01','Fri May 08 2020 01:08:15 GMT+0500 (Pakistan Standard Time)',29,'MALE');
+insert  into `child`(`id`,`name`,`image`,`latitude`,`longitude`,`temperature`,`pulse`,`nickName`,`watchKey`,`registrationDate`,`parrentId`,`gender`) values (8,'umar',NULL,'33443.234234','234234.123123','Karachi, Pakistan','72','champoo','rakhwala-team-01','Fri May 08 2020 01:08:15 GMT+0500 (Pakistan Standard Time)',29,'MALE'),(9,'secondchild',NULL,'undefined','undefined','undefined','undefined','sweetoo','rakhwala-team-02','Fri May 08 2020 01:13:36 GMT+0500 (Pakistan Standard Time)',29,'MALE');
 
 /*Table structure for table `parent` */
 
@@ -77,7 +77,7 @@ CREATE TABLE `watch` (
 
 /*Data for the table `watch` */
 
-insert  into `watch`(`id`,`watchKey`,`isAvailable`) values (1,'rakhwala-team-01','NO'),(2,'rakhwala-team-02','YES');
+insert  into `watch`(`id`,`watchKey`,`isAvailable`) values (1,'rakhwala-team-01','NO'),(2,'rakhwala-team-02','NO');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
