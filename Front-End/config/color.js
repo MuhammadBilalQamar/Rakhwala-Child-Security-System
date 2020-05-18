@@ -9,7 +9,7 @@ export const BaseColor = {
     accentColor: "#4A90A4",
     textPrimaryColor: "#1D2029",
     textSecondaryColor: "#ABB4BD",
-    grayColor: "#9B9B9B",
+    grayColor: "#696969",
     darkBlueColor: "#24253D",
     dividerColor: "#BDBDBD",
     whiteColor: "#FFFFFF",

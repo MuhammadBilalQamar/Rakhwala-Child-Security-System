@@ -1,43 +1,79 @@
 import React, { Component } from 'react';
-import { Container, List, ListItem, Left, Body, Right, Thumbnail, Header, Title, Button, Text } from 'native-base';
+import {
+    StyleSheet,
+    Text,
+    View,
+    TouchableOpacity,
+    Image,
+    FlatList
+} from 'react-native';
+import { Container, List, ListItem, Left, Body, Right, Thumbnail, Header, Title, Button } from 'native-base';
 import { BaseColor, Images } from "@config";
-import { ListUserItem } from "../../Components/index";
 import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
-
+import styles from "./styles";
 
 export default class MyGroups extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            usersDetail: [{
-                name: "Bilal Qamar",
-                status: "don't judge a book by its cover",
-                img: Images.childAvartar,
-                date: "12/11/2020"
-            },
-            {
-                name: "Muhammad Umer",
-                status: "A creative man is motivated by desire to achieve.",
-                img: Images.avartar,
-                date: "10/09/2020"
-            }
+            data: [
+                {
+                    id: 3,
+                    image: "https://lorempixel.com/100/100/nature/1/",
+                    name: "Group 1",
+                    countMembers: 51,
+                    members: [
+                        "https://bootdey.com/img/Content/avatar/avatar6.png",
+                        "https://bootdey.com/img/Content/avatar/avatar1.png",
+                        "https://bootdey.com/img/Content/avatar/avatar2.png",
+                        "https://bootdey.com/img/Content/avatar/avatar7.png",
+                        "https://bootdey.com/img/Content/avatar/avatar3.png",
+                        "https://bootdey.com/img/Content/avatar/avatar4.png"
+                    ]
+                },
+                {
+                    id: 2,
+                    image: "https://lorempixel.com/100/100/nature/2/",
+                    name: "Group 2",
+                    countMembers: 10,
+                    members: [
+                        "https://bootdey.com/img/Content/avatar/avatar6.png",
+                        "https://bootdey.com/img/Content/avatar/avatar1.png",
+                    ]
+                },
+                {
+                    id: 4,
+                    image: "https://lorempixel.com/100/100/nature/3/",
+                    name: "Group 3",
+                    countMembers: 58,
+                    members: [
+                        "https://bootdey.com/img/Content/avatar/avatar6.png",
+                        "https://bootdey.com/img/Content/avatar/avatar1.png",
+                        "https://bootdey.com/img/Content/avatar/avatar2.png"
+                    ]
+                },
+
             ]
-        };
+        }
     }
 
-    componentDidMount() {
-
+    renderGroupMembers = (group) => {
+        if (group.members) {
+            return (
+                <View style={styles.groupMembersContent}>
+                    {group.members.map((prop, key) => {
+                        return (
+                            <Image key={key} style={styles.memberImage} source={{ uri: prop }} />
+                        );
+                    })}
+                </View>
+            );
+        }
+        return null;
     }
-    navigateToParticularUser = (index) => {
-        console.log("Selected Child Index#########", index)
-        const { usersDetail } = this.state;
-        var userData = usersDetail[index];
 
-
-    }
     render() {
-        const { usersDetail } = this.state;
         return (
             <Container >
                 {/* HEADER SESSION */}
@@ -60,21 +96,47 @@ export default class MyGroups extends Component {
                     </Right>
                 </Header>
 
-
-                {/* CHILDS RENDERING */}
-                <List>
-                    {usersDetail.map((item, i) => {
+                <FlatList
+                    style={styles.root}
+                    data={this.state.data}
+                    extraData={this.state}
+                    ItemSeparatorComponent={() => {
                         return (
-                            <ListUserItem
-                                key={i}
-                                imageUri={item.img}
-                                userName={item.name}
-                                subNote={`Added On ${item.date}`}
-                                listItemClicked={() => { this.navigateToParticularUser(i) }}
-                            />
+                            <View style={styles.separator} />
                         )
-                    })}
-                </List>
+                    }}
+                    keyExtractor={(item) => {
+                        return item.id;
+                    }}
+                    renderItem={(item) => {
+                        const Group = item.item;
+                        let mainContentStyle;
+                        if (Group.attachment) {
+                            mainContentStyle = styles.mainContent;
+                        }
+                        return (
+                            <TouchableOpacity>
+                                <View style={styles.container}>
+                                    <Image source={{ uri: Group.image }} style={styles.avatar} />
+                                    <View style={styles.content}>
+                                        <View style={mainContentStyle}>
+                                            <View style={styles.text}>
+                                                <Text style={styles.groupName}>{Group.name}</Text>
+                                            </View>
+                                            <Text style={styles.countMembers}>
+                                                {Group.countMembers} members
+                                       </Text>
+                                            <Text style={styles.timeAgo}>
+                                                Updated 2 months ago
+                                        </Text>
+                                            {this.renderGroupMembers(Group)}
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        );
+                    }} />
+
             </Container>
         );
     }
