@@ -13,6 +13,8 @@ import ViewAllChilds from "./Screens/ViewAllChilds/index";
 import Profile from "./Screens/Profile/index";
 import MyGroups from "./Screens/MyGroups/index";
 import AboutUs from "./Screens/AboutUs/index";
+import CreateGroup from "./Screens/CreateGroup/index";
+import OrderWatch from "./Screens/OrderWatch/index";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -25,7 +27,7 @@ const AppNavigator = () => {
 
     <NavigationContainer >
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="OrderWatch"
         headerMode="none"
       >
         <Stack.Screen name="Login" component={Login} />
@@ -36,6 +38,8 @@ const AppNavigator = () => {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="MyGroups" component={MyGroups} />
         <Stack.Screen name="AboutUs" component={AboutUs} />
+        <Stack.Screen name="CreateGroup" component={CreateGroup} />
+        <Stack.Screen name="OrderWatch" component={OrderWatch} />
 
       </Stack.Navigator>
     </NavigationContainer>

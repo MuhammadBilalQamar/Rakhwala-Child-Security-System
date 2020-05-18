@@ -21,8 +21,8 @@ export default class MyGroups extends Component {
                 {
                     id: 3,
                     image: "https://lorempixel.com/100/100/nature/1/",
-                    name: "Group 1",
-                    countMembers: 51,
+                    name: "My Family",
+                    countMembers: 6,
                     members: [
                         "https://bootdey.com/img/Content/avatar/avatar6.png",
                         "https://bootdey.com/img/Content/avatar/avatar1.png",
@@ -35,8 +35,8 @@ export default class MyGroups extends Component {
                 {
                     id: 2,
                     image: "https://lorempixel.com/100/100/nature/2/",
-                    name: "Group 2",
-                    countMembers: 10,
+                    name: "My Friends",
+                    countMembers: 2,
                     members: [
                         "https://bootdey.com/img/Content/avatar/avatar6.png",
                         "https://bootdey.com/img/Content/avatar/avatar1.png",
@@ -45,8 +45,8 @@ export default class MyGroups extends Component {
                 {
                     id: 4,
                     image: "https://lorempixel.com/100/100/nature/3/",
-                    name: "Group 3",
-                    countMembers: 58,
+                    name: "My Cousins",
+                    countMembers: 3,
                     members: [
                         "https://bootdey.com/img/Content/avatar/avatar6.png",
                         "https://bootdey.com/img/Content/avatar/avatar1.png",

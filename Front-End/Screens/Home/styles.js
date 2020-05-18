@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: "Roboto",
-        color: "#1D2029",
+        color: BaseColor.grayColor,
         fontSize: 20,
         fontWeight: "bold",
         marginTop: 10,

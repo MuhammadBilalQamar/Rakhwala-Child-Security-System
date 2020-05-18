@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, Image } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Container, Card, CardItem, Thumbnail, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import { BaseColor, Images } from "@config";
@@ -23,7 +23,8 @@ export default class Home extends React.Component {
         this.props.navigation.navigate("ChildRegistration")
 
     }
-    settingsClick = () => {
+    createGroupClick = () => {
+        this.props.navigation.navigate("CreateGroup")
 
 
     }
@@ -38,6 +39,13 @@ export default class Home extends React.Component {
     aboutUsClick = () => {
         this.props.navigation.navigate("AboutUs")
 
+    }
+    orderWatchClick = () => {
+        this.props.navigation.navigate("OrderWatch")
+
+    }
+    settingsClick = () => { 
+        
     }
 
     signOut = () => {
@@ -69,55 +77,69 @@ export default class Home extends React.Component {
                     </Header>
 
                     {/* MAIN CONTENT */}
-                    <View>
+                    <ScrollView>
+                        <View style={{ marginBottom: 48 }}>
+                            <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
+                                <TouchableOpacity onPress={() => { this.trackChildClick() }}>
+                                    <View style={styles.socialButton}>
+                                        <Image source={Images.availableChileTrack} style={styles.socialLogo} />
+                                        <Text style={styles.text}>Track Child</Text>
+                                    </View>
+                                </TouchableOpacity>
 
-                        <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
-                            <TouchableOpacity onPress={() => { this.trackChildClick() }}>
-                                <View style={styles.socialButton}>
-                                    <Image source={Images.availableChileTrack} style={styles.socialLogo} />
-                                    <Text style={styles.text}>Track Child</Text>
-                                </View>
-                            </TouchableOpacity>
+                                <TouchableOpacity onPress={() => { this.addChildClick() }} style={styles.socialButton}>
+                                    <Image source={Images.addChildTracker} style={styles.socialLogo} />
+                                    <Text style={styles.text}>Add Child</Text>
+                                </TouchableOpacity>
 
-                            <TouchableOpacity onPress={() => { this.addChildClick() }} style={styles.socialButton}>
-                                <Image source={Images.addChildTracker} style={styles.socialLogo} />
-                                <Text style={styles.text}>Add Child</Text>
-                            </TouchableOpacity>
-
-                        </View>
+                            </View>
 
 
-                        <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
-                            <TouchableOpacity onPress={() => { this.settingsClick() }}>
-                                <View style={styles.socialButton}>
+
+                            <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
+                                <TouchableOpacity onPress={() => { this.groupsClick() }}>
+                                    <View style={styles.socialButton}>
+                                        <Image source={Images.group} style={styles.socialLogo} />
+                                        <Text style={styles.text}>My Groups</Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity onPress={() => { this.createGroupClick() }}>
+                                    <View style={styles.socialButton}>
+                                        <Image source={Images.creategroup} style={styles.socialLogo} />
+                                        <Text style={styles.text}>Create Group</Text>
+                                    </View>
+                                </TouchableOpacity>
+
+                            </View>
+
+
+                            <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
+                                <TouchableOpacity onPress={() => { this.aboutUsClick() }} style={styles.socialButton}>
+                                    <Image source={Images.aboutUs} style={styles.socialLogo} />
+                                    <Text style={styles.text}>About Us</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity onPress={() => { this.profileClick() }} style={styles.socialButton}>
+                                    <Image source={Images.profile} style={styles.socialLogo} />
+                                    <Text style={styles.text}>Profile</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                            <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
+                                <TouchableOpacity onPress={() => { this.orderWatchClick() }} style={styles.socialButton}>
+                                    <Image source={Images.watche3} style={styles.socialLogo} />
+                                    <Text style={styles.text}>Order Watch</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity onPress={() => { this.settingsClick() }} style={styles.socialButton}>
                                     <Image source={Images.settings} style={styles.socialLogo} />
                                     <Text style={styles.text}>Settings</Text>
-                                </View>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity onPress={() => { this.profileClick() }} style={styles.socialButton}>
-                                <Image source={Images.profile} style={styles.socialLogo} />
-                                <Text style={styles.text}>Profile</Text>
-                            </TouchableOpacity>
-
+                                </TouchableOpacity>
+                            </View>
                         </View>
+                    </ScrollView>
 
-
-                        <View style={{ marginTop: 48, flexDirection: "row", justifyContent: "center" }}>
-                            <TouchableOpacity onPress={() => { this.groupsClick() }}>
-                                <View style={styles.socialButton}>
-                                    <Image source={Images.group} style={styles.socialLogo} />
-                                    <Text style={styles.text}>My Groups</Text>
-                                </View>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity onPress={() => { this.aboutUsClick() }} style={styles.socialButton}>
-                                <Image source={Images.aboutUs} style={styles.socialLogo} />
-                                <Text style={styles.text}>About Us</Text>
-                            </TouchableOpacity>
-
-                        </View>
-                    </View>
                 </SafeAreaView>
 
             </Container>

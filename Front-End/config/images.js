@@ -19,5 +19,10 @@ export const Images = {
     email: require("../assets/email.png"),
     phone: require("../assets/phone.png"),
     star: require("../assets/star.png"),
+    creategroup: require("../assets/creategroup.png"),
+    groupbg: require("../assets/groupbg.png"),
+    watche1: require("../assets/watch-1.png"),
+    watche2: require("../assets/watch-2.png"),
+    watche3: require("../assets/watch-3.png"),
 
 };

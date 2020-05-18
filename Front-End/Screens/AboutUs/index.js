@@ -53,20 +53,12 @@ export default class AboutUs extends Component {
                         <Text style={styles.name}>RakhWala Team</Text>
                         <Text style={styles.subNote}>high scale business application developers</Text>
                         <Text style={styles.description}>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                            natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Donec quam felis, ultricies nec
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                            natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Donec quam felis, ultricies nec
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                            natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Donec quam felis, ultricies nec
-                      
-                      
+                        The main purpose of our app is to serve tensed parents and family 
+                        members whenever their child/loved ones are out of home and they are 
+                        very worried about them. This platform reduces their tension by providing 
+                        them current location, and health updates like temperature and heart rate for child and for family members 
+                        within a single group or individual. All of these qualities are available within a range of 
+                        single touch (app).
                       </Text>
                     </View>
                     <View style={styles.starContainer}>
